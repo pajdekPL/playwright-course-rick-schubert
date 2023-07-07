@@ -20,6 +20,7 @@ jobs:
           echo "Install dependencies from package-lock file"
           npm ci
           echo "Run playwright tests"
+          ls -al
           npm run tests:ci
       - uses: actions/upload-artifact@v3
         if: always()
@@ -27,3 +28,6 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+        run: |
+          ls -al
+          pwd

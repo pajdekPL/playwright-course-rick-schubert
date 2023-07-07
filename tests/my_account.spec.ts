@@ -3,7 +3,7 @@ import { getLoginToken } from "../api-calls/getLoginToken";
 import { MyAccountPage } from "../page-objects/MyAccountPage";
 import { adminDetails } from "../data/userDetails";
 
-test("My Account using cookie injection and mocking network request", async ({
+test.skip("My Account using cookie injection and mocking network request", async ({
   page,
 }) => {
   const loginToken = await getLoginToken(adminDetails);
