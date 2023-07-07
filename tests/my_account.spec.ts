@@ -7,6 +7,7 @@ test("My Account using cookie injection and mocking network request", async ({
   page,
 }) => {
   const loginToken = await getLoginToken(adminDetails);
+
   await page.route(
     "**/api/user?id=3ec6fe27-47b0-411a-ba19-a1ab27f63225",
     async (route, request) => {
@@ -17,6 +18,7 @@ test("My Account using cookie injection and mocking network request", async ({
       });
     }
   );
+  
   const myAccount = new MyAccountPage(page);
   await myAccount.visit();
   await page.evaluate(
